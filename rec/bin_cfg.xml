@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configs>
+    <types>
+        <type name = "int" size = "4"/>
+        <type name = "int[]" size = "4"/>
+        <type name = "str" size = "1"/>
+    </types>
+    <attrs>
+        <attr name = "ro"/>
+        <attr name = "rw"/>
+    </attrs>
+    <top_item name = "lcd" attr = "ro">        
+        <item name = "backlight" attr = "ro" type = "int[]" size = "6" value = "0;100000;0;345;500;380"/>
+        <item name = "base_info" attr = "ro" type = "int[]" size = "11" value = "72000;60;0;1280;800;30;40;80;5;10;18"/>
+        <item name = "signal_info" attr = "ro" type = "int[]" size = "4" value = "0;0;0;0"/> 
+        <item name = "lvds_info" attr = "ro" type = "int[]" size = "4" value = "0;0;0;0"/>
+    </top_item>  
+    <top_item name = "charge" attr = "ro"> 
+		<item name = "gauge_mode" attr = "ro" type = "int" size = "1" value = "0"/>
+		<item name = "low_power" attr = "ro" type = "int" size = "1" value = "7"/>
+    </top_item>    
+    <top_item name = "gague" attr = "ro"> 
+		<item name = "parameter" attr = "ro" type = "int[]" size = "64" value = "0x15;0x17;0x5B;0x59;0x55;0x54;0x4D;0x4B;0x47;0x45;0x47;0x48;0x48;0x3E;0x2E;0x24;0x1E;0x16;0x0D;0x0C;0x17;0x35;0x4B;0x4F;0x1B;0x2E;0x0C;0x6B;0x1D;0x3A;0x45;0x4C;0x52;0x4E;0x4C;0x50;0x40;0x1C;0x41;0x34;0x06;0x14;0x5B;0x85;0x8F;0x91;0x91;0x1C;0x5F;0x83;0x93;0x9A;0x00;0xB3;0xFF;0xCB;0x2F;0x7D;0x72;0xA5;0xB5;0xC1;0x46;0xAE"/>
+        <item name = "safe_power" attr = "ro" type = "int" size = "1" value = "5"/>
+    </top_item>    
+</configs>

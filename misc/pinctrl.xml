@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<groups>
+	<group name = "bt" pads = "0~11">
+		<mfp_cfg>
+			<register reg = "0" mask = "0xfff80000" value = "0x00000000"/>
+		</mfp_cfg>
+
+		<padctl_cfg>
+			<register reg = "0" mask = "0x00000001" value = "0x00000000"/>
+		</padctl_cfg>
+	</group>
+
+	<group name = "csi" pads = "143~152">
+		<mfp_cfg>
+			<register reg = "3" mask = "0x3000c000" value = "0x00000000"/>
+		</mfp_cfg>
+	</group>
+
+	<group name = "gps_i2s" pads = "29~31">
+		<mfp_cfg>
+			<register reg = "0" mask = "0x00000020" value = "0x00000020"/>
+		</mfp_cfg>
+	</group>
+
+	<group name = "gps_rmii" pads = "14~15;21">
+		<mfp_cfg>
+			<register reg = "0" mask = "0x000700c0" value = "0x00050040"/>
+		</mfp_cfg>
+	</group>
+
+	<group name = "i2c0" pads = "92~93">
+		<mfp_cfg>
+			<register reg = "3" mask = "0x00070000" value = "0x00000000"/>
+		</mfp_cfg>
+	</group>
+
+	<group name = "i2c1" pads = "128~129">
+	</group>
+
+	<group name = "i2c2" pads = "130~131">
+	</group>
+
+	<group name = "jtag_ks" pads = "35~38;40">
+		<mfp_cfg>
+			<register reg = "1" mask = "0xfc000000" value = "0x24000000"/>
+		</mfp_cfg>
+	</group>
+
+	<group name = "jtag_sd0" pads = "76~77;82~83">
+		<mfp_cfg>
+			<register reg = "2" mask = "0x000039e0" value = "0x000019c0"/>
+		</mfp_cfg>
+	</group>
+
+	<group name = "key4x2" pads = "35~40">
+		<mfp_cfg>
+			<register reg = "1" mask = "0xfc000000" value = "0x00000000"/>
+		</mfp_cfg>
+	</group>
+
+	<group name = "lcd0" pads = "42~61;63~66;68~73">
+		<mfp_cfg>
+			<register reg = "1" mask = "0x007fffc0" value = "0x00600000"/>
+		</mfp_cfg>
+	</group>
+
+	<group name = "lvds" pads = "42~61">
+		<mfp_cfg>
+			<register reg = "1" mask = "0x00600000" value = "0x00000000"/>
+		</mfp_cfg>
+	</group>
+
+	<group name = "nand" pads = "12~13;108~113;153~164">
+		<mfp_cfg>
+			<register reg = "3" mask = "0x0f000000" value = "0x00000000"/>
+		</mfp_cfg>
+	</group>
+
+	<group name = "pcm0" pads = "28;32~34">
+		<mfp_cfg>
+			<register reg = "0" mask = "0x00000004" value = "0x00000004"/>
+		</mfp_cfg>
+	</group>
+
+	<group name = "pwm01_ksin02" pads = "35~37">
+		<mfp_cfg>
+			<register reg = "1" mask = "0xe0000000" value = "0x60000000"/>
+		</mfp_cfg>
+	</group>
+
+	<group name = "pwm123_ksin3out0out1" pads = "38~40">
+		<mfp_cfg>
+			<register reg = "1" mask = "0x1c000000" value = "0x0c000000"/>
+		</mfp_cfg>
+	</group>
+
+	<group name = "pwm2_ksout2" pads = "41">
+		<mfp_cfg>
+			<register reg = "1" mask = "0x03800000" value = "0x01800000"/>
+		</mfp_cfg>
+	</group>
+
+	<group name = "rmii" pads = "14~21">
+		<mfp_cfg>
+			<register reg = "0" mask = "0x0007ffc0" value = "0x00000000"/>
+		</mfp_cfg>
+	</group>
+
+	<group name = "sd0" pads = "74~77;82~83">
+		<mfp_cfg>
+			<register reg = "2" mask = "0x000ff9e0" value = "0x00000000"/>
+		</mfp_cfg>
+
+		<pull_cfg>
+			<register reg = "1" mask = "0x0003e000" value = "0x0003e000"/>
+		</pull_cfg>
+
+		<drv_cfg>
+			<register reg = "1" mask = "0x00cf0000" value = "0x00450000"/>
+		</drv_cfg>
+	</group>
+
+	<group name = "sd1" pads = "78~81;84~85">
+		<mfp_cfg>
+			<register reg = "2" mask = "0x00000618" value = "0x00000600"/>
+		</mfp_cfg> 
+  
+  		<pull_cfg>
+			<register reg = "1" mask = "0x00000878" value = "0x00000878"/>
+		</pull_cfg>
+
+		<drv_cfg>
+			<register reg = "1" mask = "0x0030f000" value = "0x00105000"/>
+		</drv_cfg>
+		
+	</group>
+
+	<group name = "sd2" pads = "163;12~13;110;112~113">
+		<mfp_cfg>
+			<register reg = "3" mask = "0x0f000000" value = "0x0f000000"/>
+		</mfp_cfg>	
+	</group>
+
+	<group name = "sens0" pads = "0~10;107">
+		<mfp_cfg>
+			<register reg = "0" mask = "0xfff00000" value = "0xb7f00000"/>
+			<register reg = "3" mask = "0x80000000" value = "0x00000000"/>
+		</mfp_cfg>
+
+		<padctl_cfg>
+			<register reg = "0" mask = "0x00000001" value = "0x00000001"/>
+		</padctl_cfg>
+	</group>
+
+	<group name = "sens1" pads = "95~106">
+		<mfp_cfg>
+			<register reg = "3" mask = "0x00000fff" value = "0x00000000"/>
+		</mfp_cfg>
+	</group>
+
+	<group name = "smii" pads = "14~15;18;21">
+		<mfp_cfg>
+			<register reg = "0" mask = "0x000718c0" value = "0x00010800"/>
+		</mfp_cfg>
+	</group>
+
+	<group name = "spi0" pads = "86~89">
+		<mfp_cfg>
+			<register reg = "2" mask = "0x00000002" value = "0x00000000"/>
+		</mfp_cfg>
+	</group>
+
+	<group name = "spi1" pads = "90~93">
+		<mfp_cfg>
+			<register reg = "3" mask = "0x00ff0000" value = "0x00940000"/>
+		</mfp_cfg>
+	</group>
+
+	<group name = "uart0" pads = "90~91">
+		<mfp_cfg>
+			<register reg = "3" mask = "0x00f80000" value = "0x00000000"/>
+		</mfp_cfg>
+	</group>
+
+	<group name = "uart2" pads = "114~117">
+		<mfp_cfg>
+			<register reg = "2" mask = "0x00c00000" value = "0x00000000"/>
+		</mfp_cfg>
+	</group>
+
+	<group name = "uart2_sd0" pads = "74~75">
+		<mfp_cfg>
+			<register reg = "2" mask = "0x000fc000" value = "0x00090000"/>
+		</mfp_cfg>
+	</group>
+
+	<group name = "uart3" pads = "118~121">
+		<mfp_cfg>
+			<register reg = "2" mask = "0x00300000" value = "0x00940000"/>
+		</mfp_cfg>
+	</group>
+
+	<group name = "uart4" pads = "122~123">
+	</group>
+
+	<group name = "uart5_sd0" pads = "74~75">
+		<mfp_cfg>
+			<register reg = "2" mask = "0x000fc000" value = "0x000b4000"/>
+		</mfp_cfg>
+	</group>
+
+	<group name = "uart5_uart3rctsb" pads = "120~121">
+		<mfp_cfg>
+			<register reg = "2" mask = "0x00300000" value = "0x00300000"/>
+		</mfp_cfg>
+	</group>
+</groups>
+
+<functions>
+	<function name = "bt" groups = "bt"/>
+	<function name = "csi" groups = "csi"/>
+	<function name = "gps" groups = "gps_rmii gps_i2s"/>
+	<function name = "i2c0" groups = "i2c0"/>
+	<function name = "i2c1" groups = "i2c1"/>
+	<function name = "i2c2" groups = "i2c2"/>
+	<function name = "jtag" groups = "jtag_ks jtag_sd0"/>
+	<function name = "key" groups = "key4x2"/>
+	<function name = "lcd0" groups = "lcd0"/>
+	<function name = "lvds" groups = "lvds"/>
+	<function name = "nand" groups = "nand"/>
+	<function name = "pcm0" groups = "pcm0"/>
+	<function name = "pwm" groups = "pwm01_ksin02 pwm2_ksout2 pwm123_ksin3out0out1"/>
+	<function name = "rmii" groups = "rmii"/>
+	<function name = "sd0" groups = "sd0"/>
+	<function name = "sd1" groups = "sd1"/>
+	<function name = "sd2" groups = "sd2"/>
+	<function name = "sens0" groups = "sens0"/>
+	<function name = "sens1" groups = "sens1"/>
+	<function name = "smii" groups = "smii"/>
+	<function name = "spi0" groups = "spi0"/>
+	<function name = "spi1" groups = "spi1"/>
+	<function name = "key" groups = "key4x2"/>
+	<function name = "uart0" groups = "uart0"/>
+	<function name = "uart2" groups = "uart2 uart2_sd0"/>
+	<function name = "uart3" groups = "uart3"/>
+	<function name = "uart4" groups = "uart4"/>
+	<function name = "uart5" groups = "uart5_sd0"/>
+</functions>
+
+<pinctrl_mapping>
+	<mapping function = "lvds" boot_enable = "true"/>
+	<mapping function = "spi1" boot_enable = "true"/>
+	<mapping function = "sens1" boot_enable = "true"/>
+	<mapping function = "pwm" group = "pwm01_ksin02" boot_enable = "true"/>
+	<mapping function = "pwm" group = "pwm2_ksout2" boot_enable = "true"/>
+	<mapping function = "uart2" />
+
+	<mapping function = "sd0" group = "sd0" dev_name = "asoc-mmc0.0" state_name = "sd0_host"/>
+	<mapping function = "uart5" group = "uart5_sd0" dev_name = "asoc-mmc0.0" state_name = "serial_port"/>
+
+	<mapping function = "sd1" group = "sd1" dev_name = "asoc-mmc1.0" state_name = "sd1_wifi"/>
+</pinctrl_mapping>

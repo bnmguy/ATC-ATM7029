@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configs>
+    <types>
+        <type name = "int" size = "4"/>
+        <type name = "int[]" size = "4"/>
+        <type name = "str" size = "1"/>
+    </types>
+    <attrs>
+        <attr name = "ro"/>
+        <attr name = "rw"/>
+    </attrs>
+     
+    <top_item name = "snd" attr = "ro">
+        <item name = "ddd" attr = "ro" type = "int" size = "1" value = "0"/>
+        <item name = "channel" attr = "ro" type = "int" size = "1" value = "1"/>
+        <item name = "micgain" attr = "ro" type = "int" size = "1" value = "15"/>
+        <item name = "detect_mode" attr = "ro" type = "int" size = "1" value = "1"/>
+        <item name = "edlle" attr = "ro" type = "int" size = "1" value = "1"/>
+        <item name = "volume_gain" attr = "ro" type = "int" size = "1" value = "178"/>
+    </top_item>
+    <top_item name = "adckey" attr = "ro">
+        <item name = "size" attr = "ro" type = "int" size = "1" value = "9"/>
+        <item name = "left" attr = "ro" type = "int[]" size = "9" value = "0;50;151;251;351;451;590;691;701"/>
+        <item name = "right" attr = "ro" type = "int[]" size = "9" value = "0;150;250;350;450;550;690;700;1024"/>
+        <item name = "values" attr = "ro" type = "int[]" size = "9" value = "102;139;115;114;0;0;0;0;103"/>
+		<item name = "filter_dep" attr = "ro" type = "int" size = "1" value = "5"/>        
+		<item name = "variance" attr = "ro" type = "int" size = "1" value = "50"/>
+        <item name = "period" attr = "ro" type = "int" size = "1" value = "9"/>
+    </top_item>
+    <top_item name = "gsensor" attr = "ro">
+        <item name = "i2c_adap_id" attr = "ro" type = "int" size = "1" value = "2"/>
+        <item name = "regulator" attr = "ro" type = "str" size = "8" value = "sensor28"/>
+        <item name = "position" attr = "ro" type = "int" size = "1" value = "3"/>
+        <item name = "calibration" attr = "rw" type = "int[]" size = "3" value = "0;0;0"/>
+    </top_item>
+    <top_item name = "gyrosensor" attr = "ro">
+        <item name = "i2c_adap_id" attr = "ro" type = "int" size = "1" value = "2"/>
+        <item name = "regulator" attr = "ro" type = "str" size = "8" value = "sensor28"/>
+        <item name = "position" attr = "ro" type = "int" size = "1" value = "4"/>
+        <item name = "calibration" attr = "rw" type = "int[]" size = "3" value = "0;0;0"/>
+    </top_item>
+    <top_item name="cameraf" attr="ro">
+        <item name = "module_name" attr = "ro" type = "str" size = "13" value = "camera_gc0308"/>
+        <item name="h_mirror" attr="ro" type="int" size="1" value="0" /> 
+        <item name="v_flip" attr="ro" type="int" size="1" value="0" />  
+	    <item name="avdd_use_ragulator" attr="ro" type="int" size="1" value="0" />
+        <item name="avdd_use_ldo" attr="ro" type="int" size="1" value="0" />  
+        <item name="dvdd_use_ragulator" attr="ro" type="int" size="1" value="0" /> 
+        <item name="dvdd_use_ldo" attr="ro" type="int" size="1" value="0" /> 
+        <item name="dovdd_use_ragulator" attr="ro" type="int" size="1" value="0" />  
+        <item name="dovdd_use_ldo" attr="ro" type="int" size="1" value="0" />  
+    </top_item>
+    <top_item name="camerab" attr="ro">
+        <item name = "module_name" attr = "ro" type = "str" size = "12" value = "camera_hi253"/>
+        <item name="h_mirror" attr="ro" type="int" size="1" value="0" /> 
+        <item name="v_flip" attr="ro" type="int" size="1" value="0" />  
+    </top_item>
+    <top_item name = "charger" attr = "ro">
+        <item name = "zero_cap_v" attr = "ro" type = "int" size = "1" value = "3300"/>
+        <item name = "charge_r" attr = "ro" type = "int" size = "1" value = "210"/>
+        <item name = "discharge_r" attr = "ro" type = "int" size = "1" value = "1000"/>
+        <item name = "ext_dcdc" attr = "ro" type = "int" size = "1" value = "1"/>
+        <item name = "backlight_on_current" attr = "ro" type = "int" size = "1" value = "7"/>
+        <item name = "backlight_off_current" attr = "ro" type = "int" size = "1" value = "15"/>        
+    </top_item>
+    <top_item name="hdmi" attr="ro">
+        <item name="package" attr="ro" type="str" size="3" value="bga" /> 
+    </top_item> 
+    <top_item name="ctp" attr="ro">
+        <item name="sirq" attr="ro" type="int" size="1" value="0" /> 
+        <item name="i2cNum" attr="ro" type="int" size="1" value="1" /> 
+        <item name="i2cAddr" attr="ro" type="int" size="1" value="56" /> 
+        <item name="xMax" attr="ro" type="int" size="1" value="1280" /> 
+        <item name="yMax" attr="ro" type="int" size="1" value="800" /> 
+        <item name="rotate" attr="ro" type="int" size="1" value="3" /> 
+
+    </top_item>
+    <top_item name="vibrate" attr="ro">
+        <item name="max_timeout" attr="ro" type="int" size="1" value="10000" /> 
+        <item name="min_timeout" attr="ro" type="int" size="1" value="100" />    
+    </top_item> 
+    <top_item name="usb" attr="ro">
+        <item name="cfgf_serialnum" attr="ro" type="int" size="1" value="1" />  
+    </top_item> 
+</configs>

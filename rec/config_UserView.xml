@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configs>
+		<!--DISP_EN , DISP_CH : 中英文翻译-->
+		<!--operate :  两种取值 , SINGLE和EDIT , SINGLE代表由用户选择 , 表现在界面上就是下拉单(combobox) , EDIT就是用户可编辑-->
+		<!--RANGE：格式 min-max(step), min-max表明min到max之间的数据有效,Step表明min-max中step步进的值有效。若只有min-max,则表明步长为１。
+					例如：0-100（10） 表示0 10 20 30 40 50 60 70 80 90 100为有效值。4-6表明 4，5，6有效。
+					也可以直接列出可选项: RANGE = "1,10,20,50,55,100" , RANGE="on,off"
+					可以混合写 , 例如RANGE = "2,45,100-200(50),300,400-405"
+		-->		
+		<!--len : 用来限制 EDIT的长度(用户可输入最长的字符串)-->
+		<!-- readonly :  取值true和false , 界面是否允许修改该项 , 不写该属性默认可改-->
+		<!-- 下面的节点的层级结构 , 跟config.xml一样  -->
+		
+		
+	<top_item name = "snd" DISP_EN = "snd" DISP_CH = "音频配置">
+        <item name = "ddd" operate = "SINGLE" RANGE = "0-1" DISP_EN = "direct_drive" DISP_CH = "耳机的输出方式"  DISP_DETAIL_CN = "0:直驱,1:非直驱"/>
+	 	<item name = "channel" operate = "SINGLE" RANGE = "1-2" DISP_EN = "mic_channel" DISP_CH = "录音时麦克风个数" />
+	 	<item name = "micgain" operate = "EDIT" RANGE = "0-25" DISP_EN = "mic_gain" DISP_CH = "录音增益设置"  DISP_DETAIL_CN = "参数取值范围0--25，增益以1.5dB递增，参数取0时的增益为19.5dB"/> 	
+        <item name = "detect_mode" operate = "SINGLE" RANGE = "0-1" DISP_EN = "detect_mode" DISP_CH = "耳机插拔检测模式"  DISP_DETAIL_CN = "0：gpio轮询；1：gpio中断;默认为1"/>
+        <item name = "edlle" operate = "SINGLE" RANGE = "0-1" DISP_EN = "edlle" DISP_CH = "耳机检测的有效电平"  DISP_DETAIL_CN = "0:是高电平有效;1:是低电平有效"/>
+        <item name = "volume_gain" operate = "EDIT" RANGE = "0-255" DISP_EN = "volume_gain" DISP_CH = "音量等级设置"  DISP_DETAIL_CN = "取值范围0--255，[音量等级，对应值]：[15,190]、[14,182]、[13,175]、[12,167]"/> 	
+    </top_item>	
+	 
+    <top_item name = "adckey" DISP_EN = "adckey" DISP_CH = "adc按键配置">
+        <item name = "size" DISP_EN = "size" DISP_CH = "adc按键个数" operate = "SINGLE" RANGE = "0-20"/>
+	 	<item name = "left" DISP_EN = "left" DISP_CH = "adc值的下限" operate = "SUBITEMEDIT">
+	 		<SUB operate = "EDIT" RANGE = "0-0xffff" DISP_CH = "按键1分压值的下限"/>
+			<SUB operate = "EDIT" RANGE = "0-0xffff" DISP_CH = "按键2分压值的下限"/>
+			<SUB operate = "EDIT" RANGE = "0-0xffff" DISP_CH = "按键3分压值的下限"/>
+			<SUB operate = "EDIT" RANGE = "0-0xffff" DISP_CH = "按键4分压值的下限"/>
+			<SUB operate = "EDIT" RANGE = "0-0xffff" DISP_CH = "按键5分压值的下限"/>
+			<SUB operate = "EDIT" RANGE = "0-0xffff" DISP_CH = "按键6分压值的下限"/>
+			<SUB operate = "EDIT" RANGE = "0-0xffff" DISP_CH = "按键7分压值的下限"/>
+			<SUB operate = "EDIT" RANGE = "0-0xffff" DISP_CH = "按键8分压值的下限"/>
+			<SUB operate = "EDIT" RANGE = "0-0xffff" DISP_CH = "按键9(全部抬起)分压值的下限"/>
+		</item>
+	 	<item name = "right" DISP_EN = "right" DISP_CH = "adc值的上限" operate = "SUBITEMEDIT">
+	 		<SUB operate = "EDIT" RANGE = "0-0xffff" DISP_CH = "按键1分压值的上限"/>
+	 		<SUB operate = "EDIT" RANGE = "0-0xffff" DISP_CH = "按键2分压值的上限"/>
+            <SUB operate = "EDIT" RANGE = "0-0xffff" DISP_CH = "按键3分压值的上限"/>
+	 		<SUB operate = "EDIT" RANGE = "0-0xffff" DISP_CH = "按键4分压值的上限"/>
+	 		<SUB operate = "EDIT" RANGE = "0-0xffff" DISP_CH = "按键5分压值的上限"/>
+			<SUB operate = "EDIT" RANGE = "0-0xffff" DISP_CH = "按键6分压值的上限"/>
+			<SUB operate = "EDIT" RANGE = "0-0xffff" DISP_CH = "按键7分压值的上限"/>
+			<SUB operate = "EDIT" RANGE = "0-0xffff" DISP_CH = "按键8分压值的上限"/>
+			<SUB operate = "EDIT" RANGE = "0-0xffff" DISP_CH = "按键9(全部抬起)分压值的上限"/>
+		</item>
+	 	<item name = "values" DISP_EN = "values" DISP_CH = "adc的按键映射值" operate = "SUBITEMEDIT">
+	 		<SUB operate = "EDIT" RANGE = "0-0xffff" DISP_CH = "按键1的按键映射" DISP_DETAIL_CN = "默认是HOME键"/>
+			<SUB operate = "EDIT" RANGE = "0-0xffff" DISP_CH = "按键2的按键映射" DISP_DETAIL_CN = "默认是MENU键"/>
+			<SUB operate = "EDIT" RANGE = "0-0xffff" DISP_CH = "按键3的按键映射" DISP_DETAIL_CN = "默认是VOL+键"/>
+			<SUB operate = "EDIT" RANGE = "0-0xffff" DISP_CH = "按键4的按键映射" DISP_DETAIL_CN = "默认是VOL-键"/>
+			<SUB operate = "EDIT" RANGE = "0-0xffff" DISP_CH = "按键5的按键映射" DISP_DETAIL_CN = "默认是保留不用的"/>
+			<SUB operate = "EDIT" RANGE = "0-0xffff" DISP_CH = "按键6的按键映射" DISP_DETAIL_CN = "默认是保留不用的"/>
+			<SUB operate = "EDIT" RANGE = "0-0xffff" DISP_CH = "按键7的按键映射" DISP_DETAIL_CN = "默认是保留不用的"/>
+			<SUB operate = "EDIT" RANGE = "0-0xffff" DISP_CH = "按键8的按键映射" DISP_DETAIL_CN = "默认是保留不用的"/>
+			<SUB operate = "EDIT" RANGE = "0-0xffff" DISP_CH = "按键9的按键映射" DISP_DETAIL_CN = "默认是KEY_UP键"/>
+		</item>
+	 	<item name = "filter_dep" DISP_EN = "filter_dep" DISP_CH = "滤波时需要采集的adc值个数" operate = "EDIT" RANGE = "0-0xffff"/>
+        <item name = "variance" DISP_EN = "variance" DISP_CH = "滤波的误差精度" operate = "EDIT" RANGE = "0-0xffff" DISP_DETAIL_CN = "ADC值波动的范围"/>
+	 	<item name = "period" DISP_EN = "period" DISP_CH = "轮询间隔时间" operate = "EDIT" RANGE = "0-0xffff" DISP_DETAIL_CN = "单位：ms"/>
+    </top_item>
+    
+    <top_item name = "gsensor" DISP_EN = "gsensor" DISP_CH = "重力传感器配置">
+        <item name = "i2c_adap_id" DISP_EN = "i2c_adap_id" DISP_CH = "I2C总线适配器ID" operate = "SINGLE" RANGE = "1-2" DISP_DETAIL_CN = "1,代表使用I2C1;2,代表使用I2C2"/>
+	 	<item name = "regulator" DISP_EN = "regulator" DISP_CH = "LDO电源名称" operate = "EDIT" len = "32" DISP_DETAIL_CN = "sensor28表示电源的名称"/>
+	 	<item name = "position" DISP_EN = "position" DISP_CH = "gsensor第1脚的焊接方向" operate = "SINGLE" RANGE = "-4,-3,-2,-1,1,2,3,4" DISP_DETAIL_CN = "竖屏摆放，面对LCD，LOGO在左摄像头在右时，小圆点位置：1—左下角；2—左上角；3—右上角；4—右下角;正号：gsensor与lcd在同一面；负号：gsensor在lcd的背面"/>
+        <item name = "calibration" DISP_EN = "calibration" DISP_CH = "gsensor校准值" operate = "SUBITEMEDIT">
+            <SUB operate = "EDIT" RANGE = "0-0xff" DISP_CH = "X轴校准值"/>     
+            <SUB operate = "EDIT" RANGE = "0-0xff" DISP_CH = "Y轴校准值"/>
+            <SUB operate = "EDIT" RANGE = "0-0xff" DISP_CH = "Z轴校准值"/>      
+        </item>	
+    </top_item>	
+	
+	<top_item name = "cameraf" DISP_EN = "cameraf" DISP_CH = "前置摄像头配置">
+		<item name = "module_name" DISP_EN = "module_name" DISP_CH = "模组名称" operate = "EDIT" len = "16" DISP_DETAIL_CN = "前置摄像头使用的驱动ic名称，根据ic名称填写字符串即可"/>
+        <item name = "h_mirror" DISP_EN = "h_mirror" DISP_CH = "界面是否需要左右镜像" operate = "SINGLE" RANGE = "0-1" DISP_DETAIL_CN = "0：不需要；1：需要"/>
+	 	<item name = "v_flip" DISP_EN = "v_flip" DISP_CH = "界面是否需要镜像上下镜像" operate = "SINGLE" RANGE = "0-1" DISP_DETAIL_CN = "0：不需要；1：需要"/>
+	 	<item name = "avdd_use_ragulator" DISP_EN = "avdd_use_ragulator" DISP_CH = "avdd是否使用ragulator供电" operate = "SINGLE" RANGE = "0-1" DISP_DETAIL_CN = "0：avdd不使用ragulator供电；1：avdd使用ragulator供电"/>
+	 	<item name = "avdd_use_ldo" DISP_EN = "avdd_use_ldo" DISP_CH = "avdd是否使用ldo供电" operate = "SINGLE" RANGE = "0-1" DISP_DETAIL_CN = "0：avdd不使用ldo供电；1：avdd使用ldo供电"/>
+        <item name = "dvdd_use_ragulator" DISP_EN = "dvdd_use_ragulator" DISP_CH = "dvdd是否使用ragulator供电" operate = "SINGLE" RANGE = "0-1" DISP_DETAIL_CN = "0：dvdd不使用ragulator供电；1：dvdd使用ragulator供电"/>
+        <item name = "dvdd_use_ldo" DISP_EN = "dvdd_use_ldo" DISP_CH = "dvdd是否使用ldo供电" operate = "SINGLE" RANGE = "0-1" DISP_DETAIL_CN = "0：dvdd不使用ldo供电；1：dvdd使用ldo供电"/>
+        <item name = "dovdd_use_ragulator" DISP_EN = "dovdd_use_ragulator" DISP_CH = "dovdd是否使用ragulator供电" operate = "SINGLE" RANGE = "0-1" DISP_DETAIL_CN = "0：dovdd不使用ragulator供电；1：dovdd使用ragulator供电"/>
+        <item name = "dovdd_use_ldo" DISP_EN = "dovdd_use_ldo" DISP_CH = "dovdd是否使用ldo供电" operate = "SINGLE" RANGE = "0-1" DISP_DETAIL_CN = "0：dovdd不使用ldo供电；1：dovdd使用ldo供电"/>
+    </top_item>
+	
+	<top_item name = "camerab" DISP_EN = "camerab" DISP_CH = "后置摄像头配置">
+		<item name = "module_name" DISP_EN = "module_name" DISP_CH = "模组名称" operate = "EDIT" len = "16" DISP_DETAIL_CN = "后置摄像头使用的驱动ic名称，根据ic名称填写字符串即可"/>
+        <item name = "h_mirror" DISP_EN = "h_mirror" DISP_CH = "界面是否需要左右镜像" operate = "SINGLE" RANGE = "0-1" DISP_DETAIL_CN = "0：不需要；1：需要"/>
+	 	<item name = "v_flip" DISP_EN = "v_flip" DISP_CH = "界面是否需要镜像上下镜像" operate = "SINGLE" RANGE = "0-1" DISP_DETAIL_CN = "0：不需要；1：需要"/>
+    </top_item>
+	
+	<top_item name = "charger" DISP_EN = "charger" DISP_CH = "充电配置">
+        <item name = "zero_cap_v" DISP_EN = "zero_cap_v" DISP_CH = "电量为0时对应的电池电压" operate = "EDIT" RANGE = "0-0xffff" DISP_DETAIL_CN = "单位：mv" />
+        <item name = "charge_r" DISP_EN = "charge_r" DISP_CH = "充电时的电池内阻值" operate = "EDIT" RANGE = "0-0xffff" DISP_DETAIL_CN = "单位：毫欧" />
+        <item name = "discharge_r" DISP_EN = "discharge_r" DISP_CH = "放电时的电池内阻值" operate = "EDIT" RANGE = "0-0xffff" DISP_DETAIL_CN = "单位：毫欧"/>    
+        <item name = "ext_dcdc" DISP_EN = "ext_dcdc" DISP_CH = "是否存在外部DCDC充电控制电路" operate = "SINGLE" RANGE = "0-1" DISP_DETAIL_CN = "0：表示硬件上不存在外部DCDC充电控制电路；1：表示硬件上存在外部DCDC充电控制电路"/>        
+        <item name = "backlight_on_current" DISP_EN = "backlight_on_current" DISP_CH = "开背光时的充电电流设置" operate = "EDIT" RANGE = "0-0xff" DISP_DETAIL_CN = "单位：100mA" />
+        <item name = "backlight_off_current" DISP_EN = "backlight_off_current" DISP_CH = "关背光时的充电电流设置" operate = "EDIT" RANGE = "0-0xff" DISP_DETAIL_CN = "单位：100mA" />
+    </top_item>	
+    
+    <top_item name = "hdmi" DISP_EN = "hdmi" DISP_CH = "hdmi配置">
+		<item name = "package" DISP_EN = "package" DISP_CH = "芯片封装" operate = "EDIT" len = "16" DISP_DETAIL_CN = "根据芯片的封装配置"/>
+    </top_item>
+    
+    <top_item name = "ctp" DISP_EN = "ctp" DISP_CH = "电容触摸屏配置">
+		<item name = "sirq" DISP_EN = "sirq" DISP_CH = "tp使用的sirq号" operate = "SINGLE" RANGE = "0-2" DISP_DETAIL_CN = "tp使用哪个sirq，默认使用sirq0，选择范围是0 1 2"/>
+		<item name = "i2cNum" DISP_EN = "i2cNum" DISP_CH = "tp使用的I2C接口" operate = "SINGLE" RANGE = "1-3" DISP_DETAIL_CN = "tp使用哪个i2c总线，默认为1，可选范围1 2 3"/>
+        <item name = "i2cAddr" DISP_EN = "i2cAddr" DISP_CH = "I2C地址" operate = "EDIT" RANGE = "0-1023" DISP_DETAIL_CN = "i2c地址，厂商给定，如ft5406使用的是0x38,即56，范围1~1023"/>
+        <item name = "xMax" DISP_EN = "xMax" DISP_CH = "x方向最大值" operate = "EDIT" RANGE = "0-0xffff" DISP_DETAIL_CN = " x方向最大值，根据lcd决定"/>
+        <item name = "yMax" DISP_EN = "yMax" DISP_CH = "y方向最大值" operate = "EDIT" RANGE = "0-0xffff" DISP_DETAIL_CN = " y方向最大值，根据lcd决定"/>
+        <item name = "rotate" DISP_EN = "rotate" DISP_CH = "顺时针旋转角度" operate = "SINGLE" RANGE = "0-3" DISP_DETAIL_CN = "0：不旋转；1：旋转90°；2：旋转180°；3：旋转270°"/>
+    </top_item>
+   
+    <top_item name = "vibrate" DISP_EN = "vibrate" DISP_CH = "震动马达配置">
+		<item name = "max_timeout" DISP_EN = "max_timeout" DISP_CH = "震动最大时间" operate = "EDIT" RANGE = "0-0xffff" DISP_DETAIL_CN = "单位：ms" />
+		<item name = "min_timeout" DISP_EN = "min_timeout" DISP_CH = "震动最小时间" operate = "EDIT" RANGE = "0-0xffff" DISP_DETAIL_CN = "单位：ms" />
+    </top_item>
+    
+    <top_item name = "usb" DISP_EN = "usb" DISP_CH = "USB配置">
+		<item name = "cfgf_serialnum" DISP_EN = "cfgf_serialnum" DISP_CH = "U盘使用的序列号类型" operate = "SINGLE" RANGE = "0-2" DISP_DETAIL_CN = "0: 使用固定的数字作为U盘序列号（ascii格式，推荐）1: 使用固定的数字作为U盘序列号（unicode格式）2: 使用随机生成的数字作为U盘序列号（unicode格式）"/>
+    </top_item>
+   
+</configs>

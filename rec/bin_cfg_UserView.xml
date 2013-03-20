@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configs>
+		<!--DISP_EN , DISP_CH : 中英文翻译-->
+		<!--operate :  两种取值 , SINGLE和EDIT , SINGLE代表由用户选择 , 表现在界面上就是下拉单(combobox) , EDIT就是用户可编辑-->
+		<!--RANGE：格式 min-max(step), min-max表明min到max之间的数据有效,Step表明min-max中step步进的值有效。若只有min-max,则表明步长为１。
+					例如：0-100（10） 表示0 10 20 30 40 50 60 70 80 90 100为有效值。4-6表明 4，5，6有效。
+					也可以直接列出可选项: RANGE = "1,10,20,50,55,100" , RANGE="on,off"
+					可以混合写 , 例如RANGE = "2,45,100-200(50),300,400-405"
+		-->		
+		<!--len : 用来限制 EDIT的长度(用户可输入最长的字符串)-->
+		<!-- readonly :  取值true和false , 界面是否允许修改该项 , 不写该属性默认可改-->
+		<!-- 下面的节点的层级结构 , 跟bin_config.xml一样  -->
+		
+		
+	<top_item name = "lcd" DISP_EN = "lcd" DISP_CH = "LCD配置">
+	    <item name = "backlight" DISP_EN = "backlight" DISP_CH ="背光参数配置" operate = "SUBITEMEDIT">
+	    	<SUB operate = "SINGLE" RANGE = "0-3" DISP_CH = "背光使用的PWM编号" DISP_DETAIL_CN = "可选PWM0--PWM3"/>
+	        <SUB operate = "EDIT" RANGE = "0x00000000-0x0005B8D8" DISP_CH = "PWM频率(Hz)"/>
+	        <SUB operate = "SINGLE" RANGE = "0-1" DISP_CH = "PWM有效电平" DISP_DETAIL_CN = "1:高有效;0:低有效"/>
+	        <SUB operate = "EDIT" RANGE = "0-1023" DISP_CH = "驱动可支持的最小背光值" DISP_DETAIL_CN = "最小值可以设置为0"/>
+			<SUB operate = "EDIT" RANGE = "0-1023" DISP_CH = "驱动可支持的最大背光值" DISP_DETAIL_CN = "最大值可以设置为1023"/>
+			<SUB operate = "EDIT" RANGE = "0-1023" DISP_CH = "开机启动时的默认背光值" DISP_DETAIL_CN = "默认背光值应该在最小最大值之间"/>	
+		</item>
+		<item name = "base_info" DISP_EN = "base_info" DISP_CH ="LCD基本参数配置" operate = "SUBITEMEDIT">
+		    <SUB operate = "EDIT" RANGE = "0-0xffffffff" DISP_CH = "LCD频率(kHz)"/>
+		    <SUB operate = "EDIT" RANGE = "0-0xff" DISP_CH = "帧率(Hz)"/>	
+		    <SUB operate = "SINGLE" RANGE = "0-2" DISP_CH = "RGB位宽" DISP_DETAIL_CN = "0:RGB888并行;1:RGB666并行;2:RGB565并行"/>	
+			<SUB operate = "EDIT" RANGE = "0-0x800" DISP_CH = "分辨率宽度(pixel)"/>
+			<SUB operate = "EDIT" RANGE = "0-0x800" DISP_CH = "分辨率高度(pixel)"/>
+			<SUB operate = "EDIT" RANGE = "0-0x3ff" DISP_CH = "横向同步信号宽度(dclk)"/>
+			<SUB operate = "EDIT" RANGE = "0-0x3ff" DISP_CH = "横向前沿(dclk)"/>
+			<SUB operate = "EDIT" RANGE = "0-0x3ff" DISP_CH = "横向后沿(dclk)"/>
+			<SUB operate = "EDIT" RANGE = "0-0x1ff" DISP_CH = "纵向同步信号宽度(hsync)"/>
+			<SUB operate = "EDIT" RANGE = "0-0x3ff" DISP_CH = "纵向前沿(hsync)"/>
+			<SUB operate = "EDIT" RANGE = "0-0xff" DISP_CH = "纵向后沿(hsync)"/>				
+		</item>			
+		<item name = "signal_info" DISP_EN = "signal_info" DISP_CH ="LCD信号配置" operate = "SUBITEMEDIT">
+		    <SUB operate = "SINGLE" RANGE = "0-1" DISP_CH = "行同步有效电平" DISP_DETAIL_CN = "0:低电平消隐期,高电平有效期;1:高电平消隐期,低电平有效期"/>
+		    <SUB operate = "SINGLE" RANGE = "0-1" DISP_CH = "场同步有效电平" DISP_DETAIL_CN = "0:低电平消隐期,高电平有效期;1:高电平消隐期,低电平有效期"/>	   
+		    <SUB operate = "SINGLE" RANGE = "0-1" DISP_CH = "时钟DCLK上升沿下降沿有效" DISP_DETAIL_CN = "0:下降沿有效;1:上升沿有效"/>	   
+		    <SUB operate = "SINGLE" RANGE = "0-1" DISP_CH = "数据使能有效电平" DISP_DETAIL_CN = "0:高电平有效;1:低电平有效"/>		    
+		</item>
+		<item name = "lvds_info" DISP_EN = "lvds_info" DISP_CH ="lvds接口配置" operate = "SUBITEMEDIT">
+			<SUB operate = "SINGLE" RANGE = "0-1" DISP_CH = "输出映射表选择" DISP_DETAIL_CN = "0-1代表什么，详看主控IC SPEC"/>
+			<SUB operate = "SINGLE" RANGE = "0-1" DISP_CH = "镜像选择" DISP_DETAIL_CN = "0-1代表什么，详看主控IC SPEC"/>
+			<SUB operate = "SINGLE" RANGE = "0-1" DISP_CH = "奇通道时钟是否翻转" DISP_DETAIL_CN = "0:不翻转;1:翻转"/>
+			<SUB operate = "SINGLE" RANGE = "0-1" DISP_CH = "偶通道时钟是否翻转" DISP_DETAIL_CN = "0:不翻转;1:翻转"/>
+		</item>
+	</top_item>		
+	<top_item name = "charge" DISP_EN = "charge" DISP_CH = "低电配置">
+		<item name = "gauge_mode" DISP_EN = "gauge_mode" DISP_CH = "软硬电量计选择" operate = "SINGLE" RANGE = "0-1" DISP_DETAIL_CN = "0：使用软件电量计；1：使用硬件电量计"/>
+		<item name = "low_power" DISP_EN = "low_power" DISP_CH = "低电门槛百分比配置" operate = "EDIT" RANGE = "0-100" DISP_DETAIL_CN = "示例：值为7时表示，如果不插usb、adapter，开机检查电量低于7%，则关机。"/>
+    </top_item>	
+    <top_item name = "gague" DISP_EN = "gague" DISP_CH = "电量计配置">
+		<item name = "safe_power" DISP_EN = "safe_power" DISP_CH = "低电电量" operate = "EDIT" RANGE = "0-100" DISP_DETAIL_CN = "示例：值为5时，是指实际电量是5%的时候关机。"/>
+    </top_item>	 
+</configs>

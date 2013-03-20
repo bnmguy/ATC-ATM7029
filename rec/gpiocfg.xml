@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<gpios>
+	<gpio name = "boot_tp_reset" pad = "GPIOB3" dir = "1" init = "0" active = "0" unactive = "0" valid = "1" boot = "1"/> 
+	<gpio name = "boot_ext_charger" pad = "GPIOB9" dir = "1" init = "0" active = "0" unactive = "0" valid = "1" boot = "1"/> 
+	<gpio name = "boot_pa" pad = "GPIOB7" dir = "1" init = "0" active = "0" unactive = "0" valid = "1" boot = "1"/> 
+	
+	<gpio name = "ext_dcdc_charger" pad = "GPIOB9" dir = "3" init = "0" active = "0" unactive = "0" valid = "1"/> 
+	<gpio name = "tp_reset" pad = "GPIOB3" dir = "0" init = "0" active = "0" unactive = "0" valid = "1"/>
+
+	<gpio name = "lcd_pwm" pad = "GPIOB5" dir = "0" init = "1" active = "0" unactive = "1" valid = "1"/>
+	<gpio name = "lcd_vcc" pad = "GPIOB4" dir = "0" init = "0" active = "1" unactive = "0" valid = "1"/>
+	<gpio name = "lcd_led_en" pad = "GPIOC9" dir = "0" init = "0" active = "1" unactive = "0" valid = "1"/>
+
+	<gpio name = "sensorf_pwdn" pad = "GPIOC24" dir = "0" init = "1" active = "1" unactive = "0" valid = "1"/>
+	<gpio name = "sensorf_reset" pad = "GPIOC25" dir = "0" init = "1" active = "0" unactive = "1" valid = "1"/>
+	<gpio name = "sensorb_pwdn" pad = "GPIOC23" dir = "0" init = "1" active = "1" unactive = "0" valid = "1"/>
+	<gpio name = "sensorb_reset" pad = "GPIOC25" dir = "0" init = "1" active = "0" unactive = "1" valid = "1"/>
+	<gpio name = "sensor_avdd" pad = "GPIOA14" dir = "0" init = "0" active = "1" unactive = "0" valid = "1"/>
+
+	<gpio name = "sd0_detect" pad = "GPIOC23" dir = "2" init = "1" active = "0" unactive = "1" valid = "1"/>
+	<gpio name = "audio_eardetect" pad = "GPIOB6" dir = "2" init = "1" active = "0" unactive = "1" valid = "1"/>
+	<gpio name = "audio_pa" pad = "GPIOB7" dir = "0" init = "0" active = "1" unactive = "0" valid = "1"/>
+	<gpio name = "vibrate_en" pad = "GPIOD20" dir = "0" init = "0" active = "1" unactive = "0" valid = "1"/>
+	<gpio name = "mmc_detect" pad = "GPIOC22" dir = "0" init = "1" active = "1" unactive = "0"  valid = "1"/> 
+    <gpio name = "otgvbus_gpio" pad = "GPIOA19" dir = "1"  init = "0" active ="1" unactive = "1" valid = "1"/>
+	<gpio name = "usb1_wifi_gpio" pad = "GPIOA21" dir = "0" init = "0" active = "1" unactive = "0" valid = "1"/>
+</gpios>
